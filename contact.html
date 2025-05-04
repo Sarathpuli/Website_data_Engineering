@@ -1,0 +1,48 @@
+<!-- templates/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact for Data Engineering Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Contact for Data Engineering Services</h1>
+    </header>
+
+    <form action="/contact/submit" method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Phone Number:</label><br>
+        <input type="text" name="phone"><br><br>
+
+        <label>Country:</label><br>
+        <input type="text" name="country"><br><br>
+
+        <label>Budget (Optional):</label><br>
+        <input type="text" name="budget"><br><br>
+
+        <label>Project Start Date:</label><br>
+        <input type="date" name="start_date"><br><br>
+
+        <label>Project End Date:</label><br>
+        <input type="date" name="end_date"><br><br>
+
+        <label>Project Description:</label><br>
+        <textarea name="description" rows="5" required></textarea><br><br>
+
+        <button type="submit" class="btn">Submit Request</button>
+    </form>
+
+    <footer>
+        <p><a href="/" class="btn">Back to Home</a></p>
+    </footer>
+</div>
+</body>
+</html>

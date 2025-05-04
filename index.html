@@ -1,0 +1,51 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sarath Data Engineering Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sarath Data Engineering Project</h1>
+            <p>Portfolio and Experience</p>
+        </header>
+
+        <section class="profile">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Sarath's Photo">
+            <div class="bio">
+                <h2>About Me</h2>
+                <p>Hi, I am Sarath — an aspiring Data Engineer passionate about building scalable data pipelines and cloud solutions. I enjoy working with Python, AWS, and Big Data technologies to deliver impactful data-driven insights.</p>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>Data Engineer Intern</strong> at XYZ Corp (2024) — Built ETL pipelines using Python and AWS Glue.</li>
+                <li><strong>Freelance Projects</strong> — Designed end-to-end data workflows and dashboards for small businesses.</li>
+                <li><strong>Certifications</strong> — AWS Certified Cloud Practitioner, Python for Data Science.</li>
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Email: sarath@example.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/sarath" target="_blank">linkedin.com/in/sarath</a></p>
+            <p>GitHub: <a href="https://github.com/sarath" target="_blank">github.com/sarath</a></p>
+        </section>
+
+        <section class="services-contact">
+            <h2>Need Data Engineering Services?</h2>
+            <a href="/contact" class="btn">Contact Me</a>
+        </section>
+        
+
+        <footer>
+            <p>© 2025 Sarath. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

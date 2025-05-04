@@ -1,0 +1,32 @@
+import sys
+from pyspark.context import SparkContext
+from awsglue.context import GlueContext
+from awsglue.job import Job
+
+# Glue boilerplate
+sc = SparkContext()
+glueContext = GlueContext(sc)
+spark = glueContext.spark_session
+job = Job(glueContext)
+job.init('To-Clean-Website-Data', args)
+
+# Load raw data from Glue Catalog
+datasource = glueContext.create_dynamic_frame.from_catalog(
+    database = "sarath-website-raw-data",
+    table_name = "raw_data_direct_dump"
+)
+
+# Convert to DataFrame for easy cleaning
+df = datasource.toDF()
+
+# Drop rows where any column is null
+df_cleaned = df.dropna(how='any')
+
+# Remove duplicate emails (keeping first record)
+df_cleaned = df_cleaned.dropDuplicates(['email'])
+
+# Write cleaned data back to S3
+output_path = "s3://website-project-data/Clean-data-Processed/"
+df_cleaned.write.mode('overwrite').json(output_path)
+
+job.commit()

@@ -1,0 +1,27 @@
+import boto3
+import json
+
+dynamodb = boto3.resource('dynamodb')
+s3 = boto3.client('s3')
+
+def lambda_handler(event, context):
+    table = dynamodb.Table('SarathContactRequests')
+    
+    # 1️⃣ Fetch all data from DynamoDB table
+    response = table.scan()
+    items = response['Items']
+    
+    # 2️⃣ Convert items to JSON
+    data_json = json.dumps(items)
+    
+    # 3️⃣ Write JSON file into S3 bucket
+    s3.put_object(
+        Bucket='website-project-data',
+        Key='Raw-data-direct-dump/website_submissions.json',
+        Body=data_json
+    )
+    
+    return {
+        'statusCode': 200,
+        'body': f'Successfully exported {len(items)} records to S3'
+    }
