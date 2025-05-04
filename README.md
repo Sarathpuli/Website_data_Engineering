@@ -54,6 +54,8 @@ This is a full-stack project demonstrating how different AWS services work toget
 2.**Install the Dependencies:**
 
 Create a virtual environment and install required libraries:
+
+```bash
 python -m venv venv
 source venv/bin/activate   # For Linux/Mac
 venv\Scripts\activate      # For Windows
@@ -62,9 +64,11 @@ pip install -r requirements.txt
 3.**Run the Flask Application:**
 
 To start the Flask web application locally:
+
+```bash
 python app.py
 
-The web application will be accessible at http://127.0.0.1:5000/.
+The web application will be accessible at _http://127.0.0.1:5000/_.
 
 4. **AWS Setup:**
 
@@ -87,6 +91,8 @@ Verify that the Lambda function is working properly by testing it with the S3 da
 Check the AWS Glue logs to ensure the data is processed correctly and stored in the clean data folder.
 
 **Project Structure**
+
+```graphql
 Website_data_Engineering/
 │
 ├── app.py              # Flask application
@@ -100,6 +106,7 @@ Website_data_Engineering/
 
 
 **Troubleshooting**
+
 Lambda Function Permissions: Ensure that the Lambda execution role has the necessary permissions to access S3 and DynamoDB.
 
 Glue Job: Make sure your Glue job has the correct script and access to the S3 buckets.
