@@ -59,7 +59,8 @@ Create a virtual environment and install required libraries:
 python -m venv venv
 source venv/bin/activate   # For Linux/Mac
 venv\Scripts\activate      # For Windows
-pip install -r requirements.txt ///
+pip install -r requirements.txt
+```
 
 3.**Run the Flask Application:**
 
@@ -67,7 +68,7 @@ To start the Flask web application locally:
 
 ```bash
 python app.py
-
+```
 The web application will be accessible at _http://127.0.0.1:5000/_.
 
 4. **AWS Setup:**
@@ -104,7 +105,7 @@ Website_data_Engineering/
 ├── README.md           # Project documentation
 └── .gitignore          # Git ignore file to exclude unnecessary files
 
-
+```
 **Troubleshooting**
 
 Lambda Function Permissions: Ensure that the Lambda execution role has the necessary permissions to access S3 and DynamoDB.
