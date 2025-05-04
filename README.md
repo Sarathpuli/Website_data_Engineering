@@ -29,6 +29,9 @@ This is a full-stack project demonstrating how different AWS services work toget
   - **Glue**: For data transformation and cleaning.
   - **DynamoDB**: To store user contact information.
   - **SNS**: Sends notifications in case of failures.
+ 
+![Screenshot 2025-05-03 at 10 14 51 PM](https://github.com/user-attachments/assets/6d937f42-4efb-42ad-8f73-b04b31a99aa4)
+
 
 ## Getting Started
 
