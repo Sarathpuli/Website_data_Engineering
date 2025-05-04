@@ -59,7 +59,7 @@ Create a virtual environment and install required libraries:
 python -m venv venv
 source venv/bin/activate   # For Linux/Mac
 venv\Scripts\activate      # For Windows
-pip install -r requirements.txt
+pip install -r requirements.txt ```
 
 3.**Run the Flask Application:**
 
