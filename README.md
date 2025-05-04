@@ -50,3 +50,58 @@ This is a full-stack project demonstrating how different AWS services work toget
    ```bash
    git clone https://github.com/your-username/Website_data_Engineering.git
    cd Website_data_Engineering
+
+2.**Install the Dependencies:**
+
+Create a virtual environment and install required libraries:
+python -m venv venv
+source venv/bin/activate   # For Linux/Mac
+venv\Scripts\activate      # For Windows
+pip install -r requirements.txt
+
+3.**Run the Flask Application:**
+
+To start the Flask web application locally:
+python app.py
+
+The web application will be accessible at http://127.0.0.1:5000/.
+
+4. **AWS Setup:**
+
+Set up Lambda function and Glue job in your AWS account.
+
+Create an S3 bucket to store raw and cleaned data.
+
+Set up DynamoDB to store user contact information.
+
+Create an SNS topic for failure notifications.
+
+5. **Test the Application:**
+
+Open the website in your browser and fill in the contact form.
+
+After submitting, check your S3 bucket to confirm that the raw data is stored.
+
+Verify that the Lambda function is working properly by testing it with the S3 data.
+
+Check the AWS Glue logs to ensure the data is processed correctly and stored in the clean data folder.
+
+**Project Structure**
+Website_data_Engineering/
+│
+├── app.py              # Flask application
+├── templates/          # Contains HTML files (index.html, contact.html)
+├── static/             # Contains CSS, images
+│   ├── style.css
+│   └── images/
+├── requirements.txt    # Python dependencies
+├── README.md           # Project documentation
+└── .gitignore          # Git ignore file to exclude unnecessary files
+
+
+**Troubleshooting**
+Lambda Function Permissions: Ensure that the Lambda execution role has the necessary permissions to access S3 and DynamoDB.
+
+Glue Job: Make sure your Glue job has the correct script and access to the S3 buckets.
+
+CORS Issues: If you’re hosting the web app publicly, ensure that CORS settings in your S3 bucket are properly configured.
